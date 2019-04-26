@@ -52,11 +52,14 @@ export class AdminSetScheduleComponent implements OnInit {
 
   onSubmit(){
 
-    console.log(this.vals.shopAMbool_0);
+    var valsJSON = JSON.stringify(this.vals);
 
-    this.http.post(this.serverURL, this.vals)
+    this.http.post<ScheduleFormValues>(this.serverURL, valsJSON, httpOptions)
         .subscribe(msg => console.log(msg));
 
+    /*this.http.post<ScheduleFormValues>(this.serverURL, this.vals, httpOptions)
+        .subscribe(msg => console.log(msg));
+    */
   }
 
 }
