@@ -1,40 +1,52 @@
 const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+http.createServer((request, response) => {
 
-const server = http.createServer((req, res) => {
+   // Website you wish to allow to connect
+    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
 
-   const { headers, method, url } = req;
-
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
     // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'CONTENT-TYPE');
+    response.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
-    console.log("test");
+     // Request headers you wish to allow
+    response.setHeader('Access-Control-Allow-Headers', 'CONTENT-TYPE');
 
-    if(req.method === "POST"){
 
-      console.log("post");
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
+    console.error(err);
+    }).on('data', (chunk) => {
+      body.push(chunk);
+    }).on('end', () => {
+      body = Buffer.concat(body).toString();
+      // At this point, we have the headers, method, url and body, and can now
+      // do whatever we need to in order to respond to this request.
 
-      let body = [];
-      req.on('data', (chunk) => {
-        body.push(chunk);
-      }).on('end', () => {
-        body = Buffer.concat(body).toString();
+      //BEGINNING OF NEW STUFF
+
+      response.on('error', (err) => {
+        console.error(err);
       });
 
-      console.log("body: ", body);
-    }
+      response.statusCode = 200;
+      response.setHeader('Content-Type', 'application/json');
+      // Note: the 2 lines above could be replaced with this next one:
+      // response.writeHead(200, {'Content-Type': 'application/json'})
 
- // res.end('Hello World\n');
-});
+      const responseBody = { headers, method, url, body };
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+      response.write(JSON.stringify(responseBody));
+      response.end();
+      // Note: the 2 lines above could be replaced with this next one:
+      // response.end(JSON.stringify(responseBody))
+
+      // END OF NEW STUFF
+
+      var vals = JSON.stringify(body);
+      var valsObj = JSON.parse(vals);
+
+      console.log("valsObj: ", valsObj);
+
+    });
+  }).listen(3000); // Activates this server, listening on port 8080.
