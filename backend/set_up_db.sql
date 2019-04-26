@@ -83,13 +83,13 @@ insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA5', 123567, 'griffin', 'rousseau');
 	
 insert into employee_init(userName, password, fName, lName)
-	values ('changemeUGA6', 123567, 'evan ', 'verma');
+	values ('changemeUGA6', 123567, 'evan', 'verma');
 	
 insert into employee_init(userName, password, fName, lName)
-	values ('changemeUGA7', 123567, 'parker ', 'brooks');
+	values ('changemeUGA7', 123567, 'parker', 'brooks');
 	
 insert into employee_init(userName, password, fName, lName)
-	values ('changemeUGA8', 123567, 'robby ', 'wells');
+	values ('changemeUGA8', 123567, 'robby', 'wells');
 	
 insert into employee_init(userName, password, fName, lName)
 	values ('changemeUGA9', 123567, 'zach', 'bibbs');
