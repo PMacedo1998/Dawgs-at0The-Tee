@@ -15,12 +15,18 @@
                         <a class="btn btn-block" role="button" href="employee_info_page_admin">Employee Info</a>
                 </div>
                 <div class="col-2">
-                        <a class="btn btn-block" role="button" href="employee_info_page_admin">Requests</a>
+                        <nav>
+                        <a class="btn btn-block" role="button" routerLink = "/request-off-page">Requests</a>
+                        </nav>
+                
                 </div>
                 <div class="col-2">
-                        <a class="btn btn-block current-page" role="button" href="employee_info_page_admin">Generate Schedule</a>
+                 <nav>                   
+                        <a class="btn btn-block current-page" role="button" routerLink = "/admin-set-schedule">Generate Schedule</a>
+                 </nav>
                 </div>
                 <div class="col-2"></div>
         </div>
 
         <hr>
+        <router-outlet></router-outlet>

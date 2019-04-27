@@ -7,12 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeadingComponent } from './heading/heading.component';
 import { AdminSetScheduleComponent } from './admin-set-schedule/admin-set-schedule.component';
-
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RequestOffPageComponent } from './request-off-page/request-off-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeadingComponent,
-    AdminSetScheduleComponent
+    AdminSetScheduleComponent,
+    LoginPageComponent,
+    RequestOffPageComponent
   ],
   imports: [
     BrowserModule,
