@@ -1,0 +1,461 @@
+
+<div class="row">
+  <div class="col-1"></div>
+
+  <div class="col-10">
+
+    Start date for new schedule: <input [(ngModel)]="dateStrings[0]" type="date" class="form-control"
+                                  name="schedule-start-date" size="12" (change)="string2Date();">
+
+  </div>
+
+  <div class="col-2"></div>
+</div>
+
+<hr>
+
+<div class="row">
+
+  <div class="col-2"></div>
+
+  <div class="col-8">
+
+<div *ngIf="dateStrings[0]">
+
+    <form (ngSubmit)="onSubmit()" #scheduleForm="ngForm">
+
+      <table class="setScheduleTable">
+        <tr>
+          <td>{{dateStrings[0]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input [(ngModel)]="this.vals.shopAMbool_0" name="shopAMbool_0" type="checkbox" checked> Shop AM</td>
+                <td><input [(ngModel)]="this.vals.shopAMtime_0" name="shopAMtime_0" class="form-control-sm" type="time" size="9"></td>
+                <td><input [(ngModel)]="this.vals.shopPMbool_0" name="shopPMbool_0" type="checkbox" checked> Shop PM</td>
+                <td><input [(ngModel)]="this.vals.shopPMtime_0" name="shopPMtime_0" class="form-control-sm" type="time" size="9"></td>
+              </tr>
+
+              <tr>
+                <td><input [(ngModel)]="this.vals.cartsAMbool_0" name="cartsAMbool_0" type="checkbox" checked> Carts AM</td>
+                <td><input [(ngModel)]="this.vals.cartsAMtime_0" name="cartsAMtime_0" class="form-control-sm" type="time" size="9"></td>
+                <td><input [(ngModel)]="this.vals.cartsPMbool_0" name="cartsPMbool_0" type="checkbox"checked> Carts PM</td>
+                <td><input [(ngModel)]="this.vals.cartsPMtime_0" name="cartsPMtime_0" class="form-control-sm" type="time" size="9"></td>
+              </tr>
+
+              <tr>
+                <td><input [(ngModel)]="this.vals.rangeAMbool_0" name="rangeAMbool_0" type="checkbox" checked> Range AM</td>
+                <td><input [(ngModel)]="this.vals.rangeAMtime_0" name="rangeAMtime_0" class="form-control-sm" type="time" size="9"></td>
+                <td><input [(ngModel)]="this.vals.rangePMbool_0" name="rangePMbool_0" type="checkbox" checked> Range PM</td>
+                <td><input [(ngModel)]="this.vals.rangePMtime_0" name="rangePMtime_0" class="form-control-sm" type="time" size="9"></td>
+              </tr>
+
+              <tr>
+                <td><input [(ngModel)]="this.vals.rrAMbool_0" name="rrAMbool_0" type="checkbox" checked> RR AM</td>
+                <td><input [(ngModel)]="this.vals.rrAMtime_0" name="rrAMtime_0" class="form-control-sm" type="time" size="9"></td>
+                <td><input [(ngModel)]="this.vals.rrPMbool_0" name="rrPMbool_0" type="checkbox" checked> RR PM</td>
+                <td><input [(ngModel)]="this.vals.rrPMtime_0" name="rrPMtime_0" class="form-control-sm" type="time" size="9"></td>
+              </tr>
+
+              <tr>
+                <td><input [(ngModel)]="this.vals.starterAMbool_0" name="starterAMbool_0" type="checkbox" checked> Starter AM</td>
+                <td><input [(ngModel)]="this.vals.starterAMtime_0" name="starterAMtime_0" class="form-control-sm" type="time" size="9"></td>
+                <td><input [(ngModel)]="this.vals.starterPMbool_0" name="starterPMbool_0" type="checkbox"checked> Starter PM</td>
+                <td><input [(ngModel)]="this.vals.starterPMtime_0" name="starterPMtime_0" class="form-control-sm" type="time" size="9"></td>
+              </tr>
+
+              <tr>
+                <td><input [(ngModel)]="this.vals.tcAMbool_0" name="tcAMbool_0" type="checkbox"> Tournament Carts AM</td>
+                <td>
+                  <input [(ngModel)]="this.vals.tcAMtime_0" name="tcAMtime_0" class="form-control-sm" type="time" size="9">
+                  <input [(ngModel)]="this.vals.tcAMamount_0" name="tcAMamount_0" class="form-control-sm" type="text" size="9" placeholder="Amount">
+                </td>
+                <td><input [(ngModel)]="this.vals.tcPMbool_0" name="tcPMbool_0" type="checkbox"> Tournament Carts PM</td>
+                <td>
+                  <input [(ngModel)]="this.vals.tcPMtime_0" name="tcPMtime_0" class="form-control-sm" type="time" size="9">
+                  <input [(ngModel)]="this.vals.tcPMamount_0" name="tcPMamount_0" class="form-control-sm" type="text" size="9" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input [(ngModel)]="this.vals.eventName_0" name="eventName_0" class="form-control-sm" type="text"
+                                      placeholder="leave blank if none"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[1]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-2" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-2" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-2" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-2" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-2" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-2" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-2" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-2" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-2" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-2" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-2" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-2" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-2" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-2" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-2" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-2" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-2" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-2" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-2" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-2" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-2" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-2" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-2" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-2" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-2" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-2" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-2"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[2]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-3" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-3" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-3" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-3" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-3" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-3" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-3" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-3" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-3" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-3" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-3" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-3" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-3" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-3" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-3" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-3" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-3" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-3" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-3" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-3" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-3" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-3" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-3" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-3" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-3" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-3" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-3"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[3]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-4" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-4" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-4" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-4" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-4" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-4" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-4" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-4" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-4" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-4" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-4" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-4" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-4" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-4" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-4" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-4" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-4" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-4" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-4" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-4" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-4" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-4" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-4" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-4" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-4" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-4" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-4"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[4]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-5" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-5" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-5" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-5" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-5" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-5" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-5" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-5" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-5" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-5" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-5" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-5" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-5" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-5" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-5" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-5" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-5" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-5" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-5" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-5" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-5" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-5" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-5" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-5" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-5" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-5" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-5"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[5]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-6" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-6" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-6" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-6" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-6" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-6" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-6" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-6" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-6" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-6" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-6" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-6" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-6" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-6" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-6" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-6" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-6" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-6" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-6" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-6" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-6" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-6" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-6" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-6" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-6" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-6" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-6"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>{{dateStrings[6]}}</td>
+          <td>
+            <table class="setScheduleOptionsTable">
+              <tr>
+                <td><input type="checkbox" id="shopAMbool-7" value="shopAM"> Shop AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopAMtime-7" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="shopPMbool-7" value="shopPM"> Shop PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="shopPMtime-7" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="cartsAMbool-7" value="cartsAM"> Carts AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsAMtime-7" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="cartsPMbool-7" value="cartsPM"> Carts PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="cartsPMtime-7" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rangeAMbool-7" value="rangeAM"> Range AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangeAMtime-7" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rangePMbool-7" value="rangePM"> Range PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rangePMtime-7" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="rrAMbool-7" value="rrAM"> RR AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrAMtime-7" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="rrPMbool-7" value="rrPM"> RR PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="rrPMtime-7" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="starterAMbool-7" value="starterAM"> Starter AM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterAMtime-7" placeholder="Start Time"></td>
+                <td><input type="checkbox" id="starterPMbool-7" value="starterPM"> Starter PM</td>
+                <td><input class="form-control-sm" type="text" size="9" id="starterPMtime-7" placeholder="Start Time"></td>
+              </tr>
+
+              <tr>
+                <td><input type="checkbox" id="tcAMbool-7" value="tcAM"> Tournament Carts AM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcAMtime-7" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcAMamount-7" placeholder="Amount">
+                </td>
+                <td><input type="checkbox" id="tcPMbool-7" value="tcPM"> Tournament Carts PM</td>
+                <td>
+                  <input class="form-control-sm" type="text" size="9" id="tcPMtime-7" placeholder="Start Time">
+                  <input class="form-control-sm" type="text" size="9" id="tcPMamount-7" placeholder="Amount">
+                </td>
+              </tr>
+              <tr>
+                <td>Event Name: <input class="form-control-sm" type="text" id="event-7"></td>
+                <td></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+
+    <hr>
+
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-2">
+        <button class="btn btn-primary" type="submit">Generate Schedule</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+    </div>
+
+  <div class="col-1"></div>
+
+</div>

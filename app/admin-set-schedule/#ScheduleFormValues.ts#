@@ -1,0 +1,17 @@
+export class ScheduleFormValues{
+  shopAMbool-0: boolean,
+	shopPMbool-0: boolean;
+	cartsAMbool-0: boolean;
+  cartsPMbool-0: boolean;
+	rangeAMbool-0: boolean;
+	rangePMbool-0: boolean;
+	rrAMbool-0: boolean,
+	rrPMbool-0: boolean,
+	starterAMbool-0: boolean,
+	starterPMbool-0: boolean,
+	tcAMbool-0: boolean,
+	tcPMbool-0: boolean,
+
+	shopAMtime-0: time,
+
+}
