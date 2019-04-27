@@ -46,15 +46,14 @@ export class RequestOffPageComponent implements OnInit {
     this.vals.first_day_requested = this.dateStrings[0]; //populates values of first-day
     this.vals.last_day_requested = this.dateStrings[1];//populates values of last-day
 
-	  console.log("dateStrings[0]: ", this.dateStrings[0]);
-	  console.log("dateStrings[1]: ", this.dateStrings[1]);
   }
 
   onSubmit(){
 
-    console.log(this.vals.first_day_requested);
 
-    this.http.post(this.serverURL, this.vals)
+    var valsJSON = JSON.stringify(this.vals);
+
+    this.http.post<RequestOffValues>(this.serverURL, valsJSON, httpOptions)
         .subscribe(msg => console.log(msg));
 
   }
