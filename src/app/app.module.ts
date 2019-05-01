@@ -11,6 +11,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RequestOffPageComponent } from './request-off-page/request-off-page.component';
 import { SchedulePageComponent } from './schedule-page/schedule-page.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
+import {AdminRtoComponent} from './admin-rto-page/admin-rto.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +22,17 @@ import { EmployeeInfoComponent } from './employee-info/employee-info.component';
     LoginPageComponent,
     RequestOffPageComponent,
     SchedulePageComponent,
-    EmployeeInfoComponent
+    EmployeeInfoComponent,
+    AdminRtoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
   ],
+  exports: [MatRadioModule],
   providers: [],
   bootstrap: [AppComponent]
 })

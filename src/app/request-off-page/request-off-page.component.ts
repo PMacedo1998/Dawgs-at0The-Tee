@@ -11,7 +11,7 @@ const httpOptions = {
 };
 
 @Component({
-  selector: 'app-request-off-page',
+  selector: '.app-request-off-page',
   templateUrl: './request-off-page.component.html',
   styleUrls: ['../bootstrap.min.css','../app.component.css']
 })
