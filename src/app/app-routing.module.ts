@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeadingComponent } from './heading/heading.component'
-import { AdminSetScheduleComponent } from './admin-set-schedule/admin-set-schedule.component'
-import { RequestOffPageComponent} from './request-off-page/request-off-page.component'
-import { SchedulePageComponent } from './schedule-page/schedule-page.component'
-import { EmployeeInfoComponent} from './employee-info/employee-info.component'
+import { HeadingComponent } from './heading/heading.component';
+import { AdminSetScheduleComponent } from './admin-set-schedule/admin-set-schedule.component';
+import { RequestOffPageComponent} from './request-off-page/request-off-page.component';
+import { SchedulePageComponent } from './schedule-page/schedule-page.component';
+import { EmployeeInfoComponent} from './employee-info/employee-info.component';
 
 const routes: Routes = [
 
@@ -13,7 +13,6 @@ const routes: Routes = [
   {path: 'request-off-page', component: RequestOffPageComponent},
   {path: 'schedule-page', component: SchedulePageComponent},
   {path: 'employee-info', component: EmployeeInfoComponent}
-  
 ];
 
 @NgModule({
