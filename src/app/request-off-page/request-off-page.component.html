@@ -6,15 +6,15 @@
   
   <div class="col-8">
 
-    <form (ngSubmit)="onSubmit()" #scheduleForm="ngForm">
+    <form (ngSubmit)=onSubmit() id="ngForm">
     
       <div class="form-group row">
-        <label for="first_day_requested" class="col-2 col-form-label">Days Requesting:</label>
+        <label for="firstDayRequested" class="col-2 col-form-label">Days Requesting:</label>
         <div class="col-4">
           <input [(ngModel)]="dateStrings[0]" type="date" class="form-control"
                                   name="first_date_requested" size="12" (change)="string2Date();">
         </div>
-        <label for="last_day_requested" class="col-2 col-form-label">through</label>
+        <label for="lastDayRequested" class="col-2 col-form-label">through</label>
 					<div class="col-4">
             <input [(ngModel)]="dateStrings[1]" type="date" class="form-control"
             name="last_day_requested" size="12" (change)="string2Date();">

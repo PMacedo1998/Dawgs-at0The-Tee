@@ -13,7 +13,7 @@ const httpOptions = {
 @Component({
   selector: '.app-request-off-page',
   templateUrl: './request-off-page.component.html',
-  styleUrls: ['../bootstrap.min.css','../app.component.css']
+  styleUrls: ['../bootstrap.min.css', '../app.component.css']
 })
 export class RequestOffPageComponent implements OnInit {
 
@@ -29,22 +29,21 @@ export class RequestOffPageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.vals = new RequestOffValues;
+    this.vals = new RequestOffValues();
 
   }
 
   string2Date(): void{
-  	this.dateDates[0] = new Date(this.dateStrings[0]);
-    this.dateDates[0].setDate(this.dateDates[0].getDate()+1);
+    this.dateDates[0] = new Date(this.dateStrings[0]);
+    this.dateDates[0].setDate(this.dateDates[0].getDate() + 1);
     this.dateStrings[0] = this.dateDates[0].toString();
     this.dateStrings[0] = this.dateStrings[0].substr(0,15);
     this.dateDates[1] = new Date(this.dateStrings[1]);
     this.dateDates[1].setDate(this.dateDates[1].getDate()+1);
     this.dateStrings[1] = this.dateDates[1].toString();
 	  this.dateStrings[1] = this.dateStrings[1].substr(0,15);
-
-    this.vals.first_day_requested = this.dateStrings[0]; //populates values of first-day
-    this.vals.last_day_requested = this.dateStrings[1];//populates values of last-day
+    this.vals.firstDayRequested = this.dateStrings[0]; // populates values of first-day
+    this.vals.lastDayRequested = this.dateStrings[1]; // populates values of last-day
 
   }
 

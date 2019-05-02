@@ -1,7 +1,5 @@
-export class RequestOffValues{
-
-    first_day_requested: string;
-    last_day_requested: string;
+export class RequestOffValues {
+    firstDayRequested: string;
+    lastDayRequested: string;
     reason: string;
-    
-};
+}
